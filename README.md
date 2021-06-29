@@ -1,10 +1,12 @@
 # vue-pic
 
+![](https://w7.pngwing.com/pngs/78/91/png-transparent-brown-dog-illustration-dog-puppy-pet-surprise-pet-puppy-animals-carnivoran-dog-like-mammal.png)
+
 > A Vue.js project
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 

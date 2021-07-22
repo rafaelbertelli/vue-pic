@@ -1,6 +1,6 @@
 <template>
   <div class="corpo">
-    <!-- rotas -->
+    <router-view></router-view>
   </div>
 </template>
 

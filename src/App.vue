@@ -1,11 +1,27 @@
 <template>
   <div class="corpo">
-    <router-view></router-view>
+    <meu-menu :rotas="routes" />
+    <transition name="pagina">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
-export default {};
+import { routes } from "./routes";
+import Menu from "./components/shared/menu/Menu.vue";
+
+export default {
+  components: {
+    "meu-menu": Menu,
+  },
+
+  data() {
+    return {
+      routes,
+    };
+  },
+};
 </script>
 
 <style>

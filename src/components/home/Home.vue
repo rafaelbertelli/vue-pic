@@ -16,7 +16,9 @@
           <meu-botao
             tipo="button"
             rotulo="REMOVER"
+            :confirmacao="true"
             @botaoAtivado="remove($event, foto)"
+            estilo="perigo"
           />
         </meu-painel>
       </li>

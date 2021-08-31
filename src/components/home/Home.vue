@@ -10,9 +10,28 @@
     />
 
     <ul class="lista-fotos">
-      <li class="lista-fotos-item" v-for="foto of fotosComFiltro">
+      <li class="lista-fotos-item" v-for="foto of fotosComFiltro" v-bind:key="foto.url">
         <meu-painel :titulo="foto.titulo">
-          <imagem-responsiva :titulo="foto.titulo" :src="foto.url" />
+          <!-- <imagem-responsiva
+            v-meu-transform="{ increment: 15, animated: true }"
+            :titulo="foto.titulo"
+            :src="foto.url"
+          /> -->
+          <!-- <imagem-responsiva
+            v-meu-transform2.animated.reverse="90"
+            :titulo="foto.titulo"
+            :src="foto.url"
+          /> -->
+          <!-- <imagem-responsiva
+            v-meu-transform3.animated="30"
+            :titulo="foto.titulo"
+            :src="foto.url"
+          /> -->
+          <imagem-responsiva
+            v-meu-transform3:scale="1.2"
+            :titulo="foto.titulo"
+            :src="foto.url"
+          />
           <meu-botao
             tipo="button"
             rotulo="REMOVER"

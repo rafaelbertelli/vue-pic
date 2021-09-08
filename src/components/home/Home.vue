@@ -78,19 +78,33 @@ export default {
   },
 
   methods: {
+    loadContent() {
+      this.resource
+        .query()
+        .then((res) => res.json())
+        .then(
+          (fotos) => (this.fotos = fotos),
+          (err) => console.log(err)
+        );
+    },
+
     remove($event, foto) {
-      alert(`Removendo ${$event} ${foto.titulo}`);
+      this.resource.delete({ id: foto._id }).then(
+        () => {
+          this.fotos.splice(this.fotos.indexOf(foto), 1);
+          alert("Removido com sucesso");
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
     },
   },
 
   created() {
-    this.$http
-      .get("http://localhost:3000/v1/fotos")
-      .then((res) => res.json())
-      .then(
-        (fotos) => (this.fotos = fotos),
-        (err) => console.log(err)
-      );
+    this.resource = this.$resource("v1/fotos{/id}");
+
+    this.loadContent();
   },
 };
 </script>
